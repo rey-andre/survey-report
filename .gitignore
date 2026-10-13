@@ -48,3 +48,4 @@ dev.db-wal
 dev.db-shm
 *.db
 /scratch
+.neon
