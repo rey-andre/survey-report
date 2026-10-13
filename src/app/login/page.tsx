@@ -174,7 +174,7 @@ export default function LoginPage() {
             ⚡ Akun Uji Coba Cepat (Password: SurveyDev!2026):
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
-            <button
+            {/* <button
               type="button"
               onClick={() => fillTestAccount('surveyor@example.test')}
               className="btn btn-secondary"
@@ -205,7 +205,7 @@ export default function LoginPage() {
               style={{ fontSize: '11px', padding: '6px 8px' }}
             >
               Super Admin
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
