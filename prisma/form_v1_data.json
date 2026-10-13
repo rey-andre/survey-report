@@ -1,0 +1,3754 @@
+{
+  "sections": [
+    {
+      "key": "sec0",
+      "title": "Informasi Umum Survey",
+      "description": "Data dasar objek risiko yang disurvey",
+      "sortOrder": 0
+    },
+    {
+      "key": "sec1",
+      "title": "Survey Umum",
+      "description": "Pertanyaan dasar yang berlaku untuk semua jenis okupansi",
+      "sortOrder": 1
+    },
+    {
+      "key": "sec2",
+      "title": "Survey Khusus Okupansi",
+      "description": "Pertanyaan tambahan yang menyesuaikan jenis usaha/okupansi objek",
+      "sortOrder": 2
+    },
+    {
+      "key": "sec3",
+      "title": "Upload Dokumen & Foto",
+      "description": "Foto dan dokumen hasil survey lapangan",
+      "sortOrder": 3
+    },
+    {
+      "key": "sec4",
+      "title": "Management",
+      "description": "Penilaian manajemen risiko — Bobot Kategori I | Max: Good (8)",
+      "sortOrder": 4
+    },
+    {
+      "key": "sec5",
+      "title": "Construction",
+      "description": "Penilaian konstruksi bangunan — Bobot Kategori I",
+      "sortOrder": 5
+    },
+    {
+      "key": "sec6",
+      "title": "Occupancy",
+      "description": "Penilaian aktivitas di lokasi risiko — Bobot Kategori I",
+      "sortOrder": 6
+    },
+    {
+      "key": "sec7",
+      "title": "Protection — Proteksi Kebakaran",
+      "description": "Ketersediaan dan kondisi sistem proteksi kebakaran — Bobot Kategori I",
+      "sortOrder": 7
+    },
+    {
+      "key": "sec8",
+      "title": "Exposure",
+      "description": "Penilaian eksposur dari lingkungan sekitar — Bobot Kategori II | Max: Good (4)",
+      "sortOrder": 8
+    },
+    {
+      "key": "sec9",
+      "title": "Natural Hazards",
+      "description": "Kombinasi eksposur Gempa, Banjir, dan Petir — overall Marginal bila salah satu Marginal",
+      "sortOrder": 9
+    },
+    {
+      "key": "sec10",
+      "title": "Loss Estimate & Other Perils",
+      "description": "Estimasi kerugian maksimal & risiko khusus lainnya — Bobot Kategori III & II",
+      "sortOrder": 10
+    },
+    {
+      "key": "sec11",
+      "title": "Hasil Risk Grading",
+      "description": "Kalkulasi otomatis berdasarkan input surveyor",
+      "sortOrder": 11
+    }
+  ],
+  "questions": [
+    {
+      "sectionKey": "sec0",
+      "key": "f_tertanggung",
+      "label": "Nama Tertanggung",
+      "type": "text",
+      "isRequired": true,
+      "sortOrder": 0,
+      "helpText": "PT / CV / Nama Perorangan"
+    },
+    {
+      "sectionKey": "sec0",
+      "key": "f_merk",
+      "label": "Nama Komersial / Merk",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 1,
+      "helpText": "Nama usaha / brand"
+    },
+    {
+      "sectionKey": "sec0",
+      "key": "f_alamat",
+      "label": "Alamat Risiko Lengkap",
+      "type": "textarea",
+      "isRequired": true,
+      "sortOrder": 2,
+      "helpText": "Jalan, nomor, kelurahan, kecamatan, kota, provinsi"
+    },
+    {
+      "sectionKey": "sec0",
+      "key": "f_kode_pos",
+      "label": "Kode Pos",
+      "type": "text",
+      "isRequired": true,
+      "sortOrder": 3,
+      "helpText": "5 digit angka",
+      "validation": {
+        "pattern": "^[0-9]{5}$",
+        "message": "Kode Pos harus 5 digit"
+      }
+    },
+    {
+      "sectionKey": "sec0",
+      "key": "f_gps",
+      "label": "Koordinat GPS",
+      "type": "text",
+      "isRequired": true,
+      "sortOrder": 4,
+      "helpText": "Format: Latitude, Longitude (Contoh: -6.2088, 106.8456)"
+    },
+    {
+      "sectionKey": "sec0",
+      "key": "f_tanggal",
+      "label": "Tanggal Survey",
+      "type": "date",
+      "isRequired": true,
+      "sortOrder": 5
+    },
+    {
+      "sectionKey": "sec0",
+      "key": "f_surveyor",
+      "label": "Pelaksana Survey",
+      "type": "text",
+      "isRequired": true,
+      "sortOrder": 6
+    },
+    {
+      "sectionKey": "sec0",
+      "key": "f_cabang",
+      "label": "Cabang",
+      "type": "select",
+      "isRequired": true,
+      "sortOrder": 7,
+      "options": [
+        {
+          "label": "Jakarta",
+          "value": "Jakarta"
+        },
+        {
+          "label": "Surabaya",
+          "value": "Surabaya"
+        },
+        {
+          "label": "Medan",
+          "value": "Medan"
+        },
+        {
+          "label": "Bandung",
+          "value": "Bandung"
+        },
+        {
+          "label": "Semarang",
+          "value": "Semarang"
+        },
+        {
+          "label": "Makassar",
+          "value": "Makassar"
+        },
+        {
+          "label": "Denpasar",
+          "value": "Denpasar"
+        },
+        {
+          "label": "Palembang",
+          "value": "Palembang"
+        },
+        {
+          "label": "Balikpapan",
+          "value": "Balikpapan"
+        },
+        {
+          "label": "Manado",
+          "value": "Manado"
+        },
+        {
+          "label": "Pekanbaru",
+          "value": "Pekanbaru"
+        },
+        {
+          "label": "Lampung",
+          "value": "Lampung"
+        },
+        {
+          "label": "Solo",
+          "value": "Solo"
+        },
+        {
+          "label": "Malang",
+          "value": "Malang"
+        },
+        {
+          "label": "Batam",
+          "value": "Batam"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec0",
+      "key": "f_tsi",
+      "label": "Nilai Pertanggungan / TSI (Rp)",
+      "type": "number",
+      "isRequired": true,
+      "sortOrder": 8,
+      "helpText": "Total Sum Insured dalam Rupiah"
+    },
+    {
+      "sectionKey": "sec0",
+      "key": "f_pic",
+      "label": "PIC di Lokasi",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 9,
+      "helpText": "Nama & Jabatan"
+    },
+    {
+      "sectionKey": "sec1",
+      "key": "f_karyawan",
+      "label": "Jumlah Karyawan / Tenaga Kerja",
+      "type": "number",
+      "isRequired": false,
+      "sortOrder": 0
+    },
+    {
+      "sectionKey": "sec1",
+      "key": "f_sejak",
+      "label": "Usaha Berjalan Sejak Tahun",
+      "type": "number",
+      "isRequired": false,
+      "sortOrder": 1
+    },
+    {
+      "sectionKey": "sec1",
+      "key": "f_jam_op",
+      "label": "Jam Operasional",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 2,
+      "helpText": "Contoh: 08.00 - 17.00 (1 shift) / 24 jam (3 shift)"
+    },
+    {
+      "sectionKey": "sec1",
+      "key": "f_ekspansi",
+      "label": "Ada Rencana Perubahan / Ekspansi ke Depan?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 3,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec1",
+      "key": "f_ekspansi_detail",
+      "label": "Jika ada, jelaskan rencana perubahan / ekspansi",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 4,
+      "visibility": {
+        "field": "f_ekspansi",
+        "value": "yes"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_jenis",
+      "label": "Pilih Kategori Okupansi",
+      "type": "select",
+      "isRequired": true,
+      "sortOrder": 0,
+      "options": [
+        {
+          "label": "Pabrik / Manufaktur",
+          "value": "pabrik"
+        },
+        {
+          "label": "Gudang / Pergudangan",
+          "value": "gudang"
+        },
+        {
+          "label": "Commercial / Residential",
+          "value": "commercial"
+        },
+        {
+          "label": "Data Center",
+          "value": "datacenter"
+        },
+        {
+          "label": "Lainnya",
+          "value": "lainnya"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_pb_material",
+      "label": "Material (Bahan Baku Utama)",
+      "type": "textarea",
+      "isRequired": true,
+      "sortOrder": 1,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "pabrik"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_pb_proses",
+      "label": "Proses Produksi",
+      "type": "textarea",
+      "isRequired": true,
+      "sortOrder": 2,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "pabrik"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_pb_produk",
+      "label": "Produk (Hasil Akhir)",
+      "type": "textarea",
+      "isRequired": true,
+      "sortOrder": 3,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "pabrik"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_pb_mesin",
+      "label": "Mesin Utama",
+      "type": "textarea",
+      "isRequired": true,
+      "sortOrder": 4,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "pabrik"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_pb_bb_barang",
+      "label": "Kategori Barang yang Disimpan — Bahan Baku",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 5,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "pabrik"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_pb_bb_sistem",
+      "label": "Sistem Penyimpanan — Bahan Baku",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 6,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "pabrik"
+      },
+      "options": [
+        {
+          "label": "Floor Storage",
+          "value": "Floor Storage"
+        },
+        {
+          "label": "Racking",
+          "value": "Racking"
+        },
+        {
+          "label": "Block Stacking",
+          "value": "Block Stacking"
+        },
+        {
+          "label": "Lainnya",
+          "value": "Lainnya"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_pb_bb_detail",
+      "label": "Detail Sistem Penyimpanan / Keterangan Tambahan — Bahan Baku",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 7,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "pabrik"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_pb_produk_barang",
+      "label": "Kategori Barang yang Disimpan — Produk",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 8,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "pabrik"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_pb_produk_sistem",
+      "label": "Sistem Penyimpanan — Produk",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 9,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "pabrik"
+      },
+      "options": [
+        {
+          "label": "Floor Storage",
+          "value": "Floor Storage"
+        },
+        {
+          "label": "Racking",
+          "value": "Racking"
+        },
+        {
+          "label": "Block Stacking",
+          "value": "Block Stacking"
+        },
+        {
+          "label": "Lainnya",
+          "value": "Lainnya"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_pb_produk_detail",
+      "label": "Detail Sistem Penyimpanan / Keterangan Tambahan — Produk",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 10,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "pabrik"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_komoditas",
+      "label": "Klasifikasi Komoditas Gudang",
+      "type": "select",
+      "isRequired": true,
+      "sortOrder": 20,
+      "options": [
+        {
+          "label": "Barang Umum Non-Combustible",
+          "value": "noncomb"
+        },
+        {
+          "label": "Barang Umum Combustible / Campuran",
+          "value": "comb"
+        },
+        {
+          "label": "Tembakau / Rokok",
+          "value": "tembakau"
+        },
+        {
+          "label": "Flammable / Chemical",
+          "value": "flam"
+        },
+        {
+          "label": "Cold Storage",
+          "value": "cold"
+        }
+      ],
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_asal",
+      "label": "Dari mana asal tembakau yang disimpan (langsung dari petani / sudah diproses)?",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 21,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_jenis",
+      "label": "Jenis tembakau apa saja yang disimpan?",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 22,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_kemasan",
+      "label": "Bagaimana bentuk & jenis kemasannya (karung, bal, kotak, dll)?",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 23,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_staff",
+      "label": "Apakah ada karyawan yang standby/kerja terus menerus di dalam gudang?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 24,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_pengawasan",
+      "label": "Bagaimana sistem pengawasan gudang dilakukan (patroli, CCTV, sensor, dll)?",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 25,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_turnover",
+      "label": "Bagaimana perputaran stok (turnover) di gudang?",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 26,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_lama",
+      "label": "Berapa lama rata-rata tembakau disimpan (mingguan, bulanan, tahunan)?",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 27,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_tahunan",
+      "label": "Apakah ada stok yang disimpan hingga tahunan?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 28,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_sop_rotasi",
+      "label": "Apakah ada SOP untuk rotasi tumpukan stok (misalnya sistem over staple)?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 29,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_frek_rotasi",
+      "label": "Jika ada, seberapa sering rotasi dilakukan?",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 30,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_tinggi",
+      "label": "Berapa estimasi ketinggian maksimum tumpukan stok tembakau?",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 31,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_batas_tinggi",
+      "label": "Apakah ada aturan yang membatasi tinggi tumpukan?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 32,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_jarak",
+      "label": "Seberapa rapat antar tumpukan disusun?",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 33,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_suhu_stok",
+      "label": "Apakah dilakukan pengukuran suhu pada stok tembakau? (Metode & frekuensi)",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 34,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_suhu_ruang",
+      "label": "Apakah dilakukan pemantauan suhu ruangan gudang secara rutin? (Hasil rata-rata)",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 35,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_kelembapan",
+      "label": "Apakah dilakukan pemantauan kelembapan udara gudang? (Metode & hasil)",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 36,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_ventilasi",
+      "label": "Bagaimana sistem ventilasi gudang?",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 37,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_kondisi",
+      "label": "Bagaimana kondisi di dalam gudang saat dirasakan langsung (panas, sumpek, lembap, dll)?",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 38,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_foto_kemasan",
+      "label": "Foto jenis kemasan tembakau",
+      "type": "file",
+      "isRequired": false,
+      "sortOrder": 39,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_foto_tinggi",
+      "label": "Foto ketinggian tumpukan",
+      "type": "file",
+      "isRequired": false,
+      "sortOrder": 40,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_foto_jarak",
+      "label": "Foto jarak antar tumpukan",
+      "type": "file",
+      "isRequired": false,
+      "sortOrder": 41,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_tb_foto_ventilasi",
+      "label": "Foto kondisi ventilasi gudang",
+      "type": "file",
+      "isRequired": false,
+      "sortOrder": 42,
+      "visibility": {
+        "all": [
+          {
+            "field": "sp_jenis",
+            "value": "gudang"
+          },
+          {
+            "field": "sp_gd_komoditas",
+            "value": "tembakau"
+          }
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_klasifikasi",
+      "label": "Klasifikasi Kepemilikan / Pengelolaan Gudang",
+      "type": "select",
+      "isRequired": true,
+      "sortOrder": 45,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      },
+      "options": [
+        {
+          "label": "Gudang Pribadi",
+          "value": "pribadi"
+        },
+        {
+          "label": "Gudang Komersil / Disewakan",
+          "value": "komersil"
+        },
+        {
+          "label": "Gudang Logistik / 3PL",
+          "value": "3pl"
+        },
+        {
+          "label": "Lainnya",
+          "value": "lainnya"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_pribadi_syarat1",
+      "label": "Syarat 1: Hanya menyimpan barang milik sendiri / perusahaan grup",
+      "type": "checkbox",
+      "isRequired": false,
+      "sortOrder": 46,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_pribadi_syarat2",
+      "label": "Syarat 2: Pengelolaan dan SOP di bawah kontrol penuh pemilik",
+      "type": "checkbox",
+      "isRequired": false,
+      "sortOrder": 47,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_pribadi_syarat3",
+      "label": "Syarat 3: Akses masuk dibatasi dan tercatat",
+      "type": "checkbox",
+      "isRequired": false,
+      "sortOrder": 48,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_ojk_code",
+      "label": "Kategori Barang (Kode OJK)",
+      "type": "text",
+      "isRequired": true,
+      "sortOrder": 49,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_barang",
+      "label": "Kategori Barang yang Disimpan",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 50,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_sistem",
+      "label": "Sistem Penyimpanan",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 51,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      },
+      "options": [
+        {
+          "label": "Racking",
+          "value": "Racking"
+        },
+        {
+          "label": "Floor Stacking",
+          "value": "Floor Stacking"
+        },
+        {
+          "label": "Block Stacking",
+          "value": "Block Stacking"
+        },
+        {
+          "label": "Automated / AS/RS",
+          "value": "Automated / AS/RS"
+        },
+        {
+          "label": "Lainnya",
+          "value": "Lainnya"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_sistem_detail",
+      "label": "Detail Sistem Penyimpanan / Keterangan Tambahan",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 52,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_cold",
+      "label": "Ada Area Cold Storage?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 53,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_cold_pct",
+      "label": "Persentase Luas Cold Storage",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 54,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      },
+      "options": [
+        {
+          "label": "< 25%",
+          "value": "<25%"
+        },
+        {
+          "label": "25% – 50%",
+          "value": "25-50%"
+        },
+        {
+          "label": "> 50%",
+          "value": ">50%"
+        },
+        {
+          "label": "Manual / Lainnya",
+          "value": "manual"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_cold_pct_manual",
+      "label": "Input Persentase Manual Cold Storage (%)",
+      "type": "number",
+      "isRequired": false,
+      "sortOrder": 55,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_forklift",
+      "label": "Ada Aktivitas Charging Forklift Baterai?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 56,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_forklift_jarak",
+      "label": "Jarak Area Charging dari Tumpukan Barang",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 57,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      },
+      "options": [
+        {
+          "label": "< 5 meter",
+          "value": "<5m"
+        },
+        {
+          "label": "5 – 10 meter",
+          "value": "5-10m"
+        },
+        {
+          "label": "> 10 meter",
+          "value": ">10m"
+        },
+        {
+          "label": "Ruang Terpisah Khusus",
+          "value": "terpisah"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_lampu",
+      "label": "Ada Instalasi Lampu Merkuri / HID?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 58,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_lampu_cover",
+      "label": "Lampu Memiliki Cover / Pelindung?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 59,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_gd_mb",
+      "label": "Ada Coverage MB (Machinery Breakdown)?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 60,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "gudang"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_cm_tipe",
+      "label": "Sub-Tipe Commercial",
+      "type": "select",
+      "isRequired": true,
+      "sortOrder": 70,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Perkantoran",
+          "value": "perkantoran"
+        },
+        {
+          "label": "Restoran / Mall tenant F&B",
+          "value": "restoran"
+        },
+        {
+          "label": "Hotel",
+          "value": "hotel"
+        },
+        {
+          "label": "Rumah Sakit",
+          "value": "rs"
+        },
+        {
+          "label": "Apartemen",
+          "value": "apartemen"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_kt_lantai",
+      "label": "Jumlah Lantai & Estimasi Kapasitas Orang",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 71,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_kt_server",
+      "label": "Ada Ruang Server / Data Center?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 72,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_kt_server_gas",
+      "label": "Proteksi Kebakaran Khusus Gas/FM200 Tersedia?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 73,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_kt_lift",
+      "label": "Jumlah Lift & Tangga Darurat",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 74,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_kt_parkir",
+      "label": "Lokasi Area Parkir",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 75,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Basement",
+          "value": "basement"
+        },
+        {
+          "label": "Gedung Parkir Terpisah",
+          "value": "gedung"
+        },
+        {
+          "label": "Terbuka / Outdoor",
+          "value": "outdoor"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_gas",
+      "label": "Jenis Bahan Bakar / Gas",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 76,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "LPG Tabung",
+          "value": "lpg"
+        },
+        {
+          "label": "PGN Pipa",
+          "value": "pgn"
+        },
+        {
+          "label": "Listrik",
+          "value": "listrik"
+        },
+        {
+          "label": "Lainnya",
+          "value": "lainnya"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_sistem_gas",
+      "label": "Sistem Gas",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 77,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Tabung di Dapur",
+          "value": "dapur"
+        },
+        {
+          "label": "Tabung di Luar / Sentral Pipa",
+          "value": "sentral"
+        },
+        {
+          "label": "Tangki Sentral",
+          "value": "tangki"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_kapasitas_gas",
+      "label": "Kapasitas Total & Lokasi Penyimpanan Gas",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 78,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_detector",
+      "label": "Gas Leak Detector di Area Dapur?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 79,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_solenoid",
+      "label": "Interlock Solenoid Valve Otomatis?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 80,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_deep_fry",
+      "label": "Ada Peralatan Deep Frying?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 81,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_hood_supp",
+      "label": "Automatic Fire Suppression di Kitchen Hood?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 82,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_hood_clean",
+      "label": "Frekuensi Pembersihan Kitchen Hood & Ducting",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 83,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_close_check",
+      "label": "Pemeriksaan Kompor & Gas Sebelum Tutup?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 84,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_inspeksi",
+      "label": "Inspeksi Tenant Berkala?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 85,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_ext",
+      "label": "APAR Khusus Kelas K / Wet Chemical?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 86,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_fb_spr_hyd",
+      "label": "Sprinkler / Hidran Mengcover Area Dapur?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 87,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_rs_highvalue",
+      "label": "Peralatan Medis Bernilai Tinggi & Nilai Perkiraan",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 88,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_rs_lokasi",
+      "label": "Lokasi Penempatan Peralatan Medis",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 89,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_rs_fireprot",
+      "label": "Proteksi Kebakaran Khusus Ruang Alat Medis",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 90,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_rs_medgas",
+      "label": "Medical Gas / Bahan Mudah Terbakar",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 91,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_rs_water",
+      "label": "Potensi Water Damage & Water Leak Detection?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 92,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_rs_security",
+      "label": "Kontrol Akses & CCTV Ruang Medis?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 93,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_apartemen_note",
+      "label": "Catatan Khusus Apartemen",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 94,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "commercial"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_purpose",
+      "label": "Apakah bangunan sejak awal didesain sebagai Data Center?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 110,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya (Purpose-Built)",
+          "value": "yes"
+        },
+        {
+          "label": "Bukan (Alih Fungsi Bangunan)",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_structural",
+      "label": "Pemeriksaan/pekerjaan struktural sebelum alih fungsi?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 111,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_mep",
+      "label": "Kajian & instalasi MEP khusus data center?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 112,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_slf",
+      "label": "SLF (Sertifikat Laik Fungsi) alih fungsi tersedia?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 113,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_uptime",
+      "label": "Sertifikasi Tier Uptime Institute?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 114,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_tier",
+      "label": "Jenis Tier Uptime Institute",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 115,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Tier I",
+          "value": "tier1"
+        },
+        {
+          "label": "Tier II",
+          "value": "tier2"
+        },
+        {
+          "label": "Tier III",
+          "value": "tier3"
+        },
+        {
+          "label": "Tier IV",
+          "value": "tier4"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_other_cert",
+      "label": "Lembaga / jenis sertifikasi data center lain",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 116,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_datahall",
+      "label": "Data Hall (Spesifikasi & Jumlah Ruangan)",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 117,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_datahall_62",
+      "label": "Data Hall (Kapasitas beban & ruangan)",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 118,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_it_load",
+      "label": "Kapasitas Beban IT (kW / MW)",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 119,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_power_source",
+      "label": "Sumber Pasokan Listrik Utama",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 120,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_feeder",
+      "label": "Jumlah Jalur Penyulang (Feeder)",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 121,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_elec_redundancy",
+      "label": "Redundansi Sistem Kelistrikan?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 122,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_elec_scheme",
+      "label": "Skema Redundansi Listrik",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 123,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "N+1",
+          "value": "n+1"
+        },
+        {
+          "label": "2N",
+          "value": "2n"
+        },
+        {
+          "label": "2N+1",
+          "value": "2n+1"
+        },
+        {
+          "label": "Lainnya",
+          "value": "lainnya"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_elec_other",
+      "label": "Keterangan Skema Listrik Lainnya",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 124,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_tr_oil",
+      "label": "Transformer Jenis Oil?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 125,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_tr_oil_detail",
+      "label": "Detail Transformer Oil",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 126,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_tr_air",
+      "label": "Transformer Jenis Dry/Air?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 127,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_tr_air_detail",
+      "label": "Detail Transformer Dry/Air",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 128,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_tr_other",
+      "label": "Transformer Jenis Lainnya",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 129,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_cooling_redundancy",
+      "label": "Redundansi Pendinginan?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 130,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_cooling_scheme",
+      "label": "Skema Redundansi Pendinginan",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 131,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "N+1",
+          "value": "n+1"
+        },
+        {
+          "label": "N+2",
+          "value": "n+2"
+        },
+        {
+          "label": "2N",
+          "value": "2n"
+        },
+        {
+          "label": "Lainnya",
+          "value": "lainnya"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_crac",
+      "label": "Sistem Pendingin CRAC?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 132,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_fanwall",
+      "label": "Sistem Pendingin Fan Wall?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 133,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_crah",
+      "label": "Sistem Pendingin CRAH?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 134,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_util_genset",
+      "label": "Utilitas: Genset",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 135,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_util_cooling_tower",
+      "label": "Utilitas: Cooling Tower",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 136,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_util_chiller",
+      "label": "Utilitas: Chiller",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 137,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_util_ups",
+      "label": "Utilitas: UPS",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 138,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_battery_it",
+      "label": "Jenis Baterai Sistem IT",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 139,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "VRLA",
+          "value": "vrla"
+        },
+        {
+          "label": "Lithium-Ion",
+          "value": "li_ion"
+        },
+        {
+          "label": "Lainnya",
+          "value": "lainnya"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_battery_utility",
+      "label": "Jenis Baterai Utility",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 140,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "VRLA",
+          "value": "vrla"
+        },
+        {
+          "label": "Lithium-Ion",
+          "value": "li_ion"
+        },
+        {
+          "label": "Lainnya",
+          "value": "lainnya"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_dh_clean",
+      "label": "Proteksi Data Hall: Clean Agent Gas (FM200/Novec/Inergen)",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 141,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_dh_vesda",
+      "label": "Proteksi Data Hall: Detektor VESDA (Very Early Smoke)",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 142,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_dh_preaction",
+      "label": "Proteksi Data Hall: Pre-action Sprinkler System",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 143,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_bat_clean",
+      "label": "Proteksi Ruang Baterai: Clean Agent Gas",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 144,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_bat_hydrogen",
+      "label": "Proteksi Ruang Baterai: Hydrogen Gas Detector",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 145,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_ups_clean",
+      "label": "Proteksi Ruang UPS: Clean Agent Gas",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 146,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_genset_fire",
+      "label": "Proteksi Kebakaran Ruang Genset (Foam/Water Mist/Sprinkler)",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 147,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_fuel_storage_fire",
+      "label": "Proteksi Kebakaran Penyimpanan Bahan Bakar",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 148,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_fuel_type",
+      "label": "Jenis Bahan Bakar Genset & Tangki",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 149,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_fuel_main",
+      "label": "Kapasitas Tangki Bahan Bakar Utama (Main Storage)",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 150,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_fuel_daily",
+      "label": "Kapasitas Tangki Harian (Day Tank)",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 151,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_panel_internal",
+      "label": "Inspeksi & Perawatan Panel Listrik Internal",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 152,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_panel_external",
+      "label": "Inspeksi & Perawatan Panel Listrik Eksternal",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 153,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_genset_internal",
+      "label": "Perawatan Genset Internal",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 154,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_genset_external",
+      "label": "Perawatan Genset Eksternal",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 155,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_cool_internal",
+      "label": "Perawatan Pendinginan Internal",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 156,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_cool_external",
+      "label": "Perawatan Pendinginan Eksternal",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 157,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_thd",
+      "label": "Pengukuran Total Harmonic Distortion (THD)",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 158,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      }
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_harmonic",
+      "label": "Harmonic Filter Tersedia?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 159,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_surge",
+      "label": "Surge Arrestor / TVSS Tersedia?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 160,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_dc_waterleak",
+      "label": "Water Leak Detector Tersedia?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 161,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "datacenter"
+      },
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec2",
+      "key": "sp_lainnya_desc",
+      "label": "Deskripsi Jenis Usaha & Hal Khusus yang Perlu Diperhatikan",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 170,
+      "visibility": {
+        "field": "sp_jenis",
+        "value": "lainnya"
+      }
+    },
+    {
+      "sectionKey": "sec3",
+      "key": "up_foto",
+      "label": "Tampak Depan, Samping, Dalam, dll.",
+      "type": "file",
+      "isRequired": false,
+      "sortOrder": 0,
+      "helpText": "Bisa pilih beberapa foto sekaligus"
+    },
+    {
+      "sectionKey": "sec3",
+      "key": "up_site_layout",
+      "label": "Upload general site layout / denah keseluruhan lokasi",
+      "type": "file",
+      "isRequired": false,
+      "sortOrder": 1,
+      "helpText": "Contoh: site plan, denah bangunan, posisi area utama, akses masuk/keluar"
+    },
+    {
+      "sectionKey": "sec3",
+      "key": "up_fire_layout",
+      "label": "Upload layout proteksi kebakaran",
+      "type": "file",
+      "isRequired": false,
+      "sortOrder": 2,
+      "helpText": "Posisi hidran, pompa, tangki air, sprinkler valve, panel deteksi"
+    },
+    {
+      "sectionKey": "sec3",
+      "key": "up_hot_work",
+      "label": "Upload form / contoh Hot Work Permit",
+      "type": "file",
+      "isRequired": false,
+      "sortOrder": 3,
+      "helpText": "Formulir izin kerja panas yang berlaku di lokasi"
+    },
+    {
+      "sectionKey": "sec3",
+      "key": "up_catatan",
+      "label": "Catatan Terkait Dokumen / Foto",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 4
+    },
+    {
+      "sectionKey": "sec4",
+      "key": "m1",
+      "label": "Kebersihan dan kerapihan — Lokasi terlihat bersih dan rapi secara visual",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 0,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec4",
+      "key": "m2",
+      "label": "Aturan merokok — Ada larangan merokok, tidak nampak puntung rokok di area berisiko",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 1,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec4",
+      "key": "m3",
+      "label": "Pelatihan kebakaran — Diadakan minimal 1x per tahun, ada bukti/dokumentasi",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 2,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec4",
+      "key": "m4",
+      "label": "Perawatan rutin — Dilakukan inspeksi dan pemeliharaan berkala atas instalasi",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 3,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec4",
+      "key": "m7",
+      "label": "Hot Work Permit — Ada prosedur tertulis dan implementasi izin kerja panas",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 4,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec4",
+      "key": "m_klaim",
+      "label": "Jumlah klaim dalam 5 tahun terakhir",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 5,
+      "options": [
+        {
+          "label": "0 (Tidak ada klaim)",
+          "value": "0"
+        },
+        {
+          "label": "1–2 kali klaim",
+          "value": "1-2"
+        },
+        {
+          "label": "3 kali atau lebih",
+          "value": "3+"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec4",
+      "key": "m_klaim_detail",
+      "label": "Detail Kerugian / Klaim",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 6,
+      "helpText": "Rincian kejadian klaim yang pernah terjadi",
+      "visibility": {
+        "field": "m_klaim",
+        "notValue": "0"
+      }
+    },
+    {
+      "sectionKey": "sec4",
+      "key": "m_improvement",
+      "label": "Risk improvement atas klaim sebelumnya",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 7,
+      "options": [
+        {
+          "label": "Ya (Sudah dilakukan perbaikan)",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ],
+      "visibility": {
+        "field": "m_klaim",
+        "notValue": "0"
+      }
+    },
+    {
+      "sectionKey": "sec4",
+      "key": "m_improvement_detail",
+      "label": "Ringkasan Kejadian & Tindak Lanjut / Perbaikan yang Dilakukan",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 8,
+      "visibility": {
+        "field": "m_klaim",
+        "notValue": "0"
+      }
+    },
+    {
+      "sectionKey": "sec4",
+      "key": "m_rekomendasi",
+      "label": "> 50% rekomendasi Aswata telah dijalankan?",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 9,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec4",
+      "key": "m_catatan",
+      "label": "Catatan Management",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 10
+    },
+    {
+      "sectionKey": "sec5",
+      "key": "c_kelas",
+      "label": "Kelas Konstruksi Bangunan",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 0,
+      "options": [
+        {
+          "label": "Kelas 1 (Konstruksi Beton)",
+          "value": "8",
+          "desc": "Dinding, lantai, atap seluruhnya non-combustible, rangka beton bertulang",
+          "badge": "Good (8)"
+        },
+        {
+          "label": "Kelas 1 (Konstruksi Baja)",
+          "value": "6",
+          "desc": "Rangka baja dengan proteksi fireproofing memadai",
+          "badge": "Average (6)"
+        },
+        {
+          "label": "Kelas 2 (Sebagian Kayu/Baja Ringan)",
+          "value": "4",
+          "desc": "Rangka baja ringan tanpa proteksi, dinding campuran",
+          "badge": "Marginal (4)"
+        },
+        {
+          "label": "Kelas 3 (Mayoritas Kayu/Combustible)",
+          "value": "3",
+          "desc": "Didominasi material mudah terbakar",
+          "badge": "Poor (3)"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec5",
+      "key": "c_lantai",
+      "label": "Jumlah Lantai",
+      "type": "number",
+      "isRequired": true,
+      "sortOrder": 1
+    },
+    {
+      "sectionKey": "sec5",
+      "key": "c_luas",
+      "label": "Luas Bangunan (m²)",
+      "type": "number",
+      "isRequired": false,
+      "sortOrder": 2
+    },
+    {
+      "sectionKey": "sec5",
+      "key": "c_tahun",
+      "label": "Tahun Dibangun",
+      "type": "number",
+      "isRequired": false,
+      "sortOrder": 3
+    },
+    {
+      "sectionKey": "sec5",
+      "key": "c_sandwich",
+      "label": "Apakah menggunakan Combustible Sandwich Panel > 30% floor area?",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 4,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec5",
+      "key": "c_acp",
+      "label": "Apakah menggunakan Combustible ACP (Aluminium Composite Panel) > 30% surface area?",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 5,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec5",
+      "key": "c_catatan",
+      "label": "Catatan Konstruksi",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 6
+    },
+    {
+      "sectionKey": "sec6",
+      "key": "o_breakdown_code",
+      "label": "Breakdown Okupansi ASWATA",
+      "type": "lookup",
+      "isRequired": true,
+      "sortOrder": 0,
+      "helpText": "Cari kode atau nama okupansi dari 365 referensi"
+    },
+    {
+      "sectionKey": "sec6",
+      "key": "o_breakdown_name",
+      "label": "Nama Okupansi Terpilih",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 1
+    },
+    {
+      "sectionKey": "sec6",
+      "key": "o_hazard_score",
+      "label": "Skor Hazard Okupansi",
+      "type": "number",
+      "isRequired": false,
+      "sortOrder": 2
+    },
+    {
+      "sectionKey": "sec6",
+      "key": "o_hazard_cat",
+      "label": "Kategori Hazard Risk",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 3
+    },
+    {
+      "sectionKey": "sec6",
+      "key": "o_hazard_label",
+      "label": "Label Kategori Hazard",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 4
+    },
+    {
+      "sectionKey": "sec6",
+      "key": "o_deskripsi",
+      "label": "Deskripsi aktivitas utama di lokasi",
+      "type": "textarea",
+      "isRequired": true,
+      "sortOrder": 5
+    },
+    {
+      "sectionKey": "sec6",
+      "key": "o_kimia",
+      "label": "Penyimpanan/penggunaan bahan kimia berbahaya",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 6,
+      "options": [
+        {
+          "label": "None (Tidak Ada)",
+          "value": "none"
+        },
+        {
+          "label": "Small (Jumlah Terbatas)",
+          "value": "small"
+        },
+        {
+          "label": "Large (Jumlah Besar/Industri)",
+          "value": "large"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec6",
+      "key": "o_dapur",
+      "label": "Apakah ada dapur/kitchen (Restaurant, Hotel, Central Kitchen)?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 7,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec6",
+      "key": "o_forklift",
+      "label": "Apakah ada forklift listrik yang diisi baterai di dalam gedung?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 8,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_apar",
+      "label": "APAR — Alat Pemadam Api Ringan (Bobot 25%)",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 0,
+      "options": [
+        {
+          "label": "Good (Terawat, Bertekanan, Merata)",
+          "value": "good"
+        },
+        {
+          "label": "Average (Ada tapi sebagian lewat masa berlaku / kurang merata)",
+          "value": "avg"
+        },
+        {
+          "label": "None (Tidak ada / rusak)",
+          "value": "none"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_hidran",
+      "label": "Hidran — Unit Boks/Pillar Hidran (Bobot 30%)",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 1,
+      "options": [
+        {
+          "label": "Good (Lengkap, Suplai Air Cukup, Pompa Auto)",
+          "value": "good"
+        },
+        {
+          "label": "Average (Ada hidran tapi debit/tekanan/kondisi kurang maksimal)",
+          "value": "avg"
+        },
+        {
+          "label": "None (Tidak ada sistem hidran)",
+          "value": "none"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_hidran_indoor",
+      "label": "Jumlah unit indoor hydrant",
+      "type": "number",
+      "isRequired": false,
+      "sortOrder": 2
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_hidran_outdoor",
+      "label": "Jumlah unit outdoor hydrant",
+      "type": "number",
+      "isRequired": false,
+      "sortOrder": 3
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_hidran_pumps",
+      "label": "Pompa Hidran (Jockey, Main, Diesel: unit, kapasitas, auto-start)",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 4
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_hidran_water",
+      "label": "Kapasitas penyimpanan air hidran (m³ / liter)",
+      "type": "number",
+      "isRequired": false,
+      "sortOrder": 5
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_detektor",
+      "label": "Detektor Kebakaran Otomatis (Bobot 25%)",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 6,
+      "options": [
+        {
+          "label": "Good (Berfungsi normal, terawat, terkoneksi panel kontrol)",
+          "value": "good"
+        },
+        {
+          "label": "Average (Ada detektor tapi sebagian tidak berfungsi / belum addressable)",
+          "value": "avg"
+        },
+        {
+          "label": "None (Tidak ada sistem deteksi otomatis)",
+          "value": "none"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_det_normal",
+      "label": "Apakah sistem detector berfungsi normal?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 7,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ],
+      "visibility": {
+        "field": "p_detektor",
+        "values": [
+          "good",
+          "avg"
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_det_jenis",
+      "label": "Jenis Detektor (Smoke / Heat / Flame / Multi-sensor)",
+      "type": "text",
+      "isRequired": false,
+      "sortOrder": 8,
+      "visibility": {
+        "field": "p_detektor",
+        "values": [
+          "good",
+          "avg"
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_det_coverage",
+      "label": "Cakupan instalasi detektor",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 9,
+      "options": [
+        {
+          "label": "< 30%",
+          "value": "<30%"
+        },
+        {
+          "label": "30% – 50%",
+          "value": "30-50%"
+        },
+        {
+          "label": "50% – 80%",
+          "value": "50-80%"
+        },
+        {
+          "label": "> 80%",
+          "value": ">80%"
+        }
+      ],
+      "visibility": {
+        "field": "p_detektor",
+        "values": [
+          "good",
+          "avg"
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_det_coverage_desc",
+      "label": "Penjelasan area cakupan detektor",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 10,
+      "visibility": {
+        "field": "p_detektor",
+        "values": [
+          "good",
+          "avg"
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_sprinkler",
+      "label": "Sprinkler (Bobot 10%)",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 11,
+      "options": [
+        {
+          "label": "Good (Sistem sprinkler aktif, tes berkala, suplai air terjamin)",
+          "value": "good"
+        },
+        {
+          "label": "Average (Ada sprinkler tapi tidak mengcover seluruh area atau tanpa suplai mandiri)",
+          "value": "avg"
+        },
+        {
+          "label": "None (Tidak ada sistem sprinkler)",
+          "value": "none"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_spr_same_water",
+      "label": "Apakah suplai air sprinkler sama dengan sistem hidran?",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 12,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ],
+      "visibility": {
+        "field": "p_sprinkler",
+        "values": [
+          "good",
+          "avg"
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_spr_water_desc",
+      "label": "Jika tidak sama, jelaskan suplai air sprinkler",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 13,
+      "visibility": {
+        "field": "p_spr_same_water",
+        "value": "no"
+      }
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_spr_coverage",
+      "label": "Cakupan instalasi sprinkler",
+      "type": "select",
+      "isRequired": false,
+      "sortOrder": 14,
+      "options": [
+        {
+          "label": "< 30%",
+          "value": "<30%"
+        },
+        {
+          "label": "30% – 50%",
+          "value": "30-50%"
+        },
+        {
+          "label": "50% – 80%",
+          "value": "50-80%"
+        },
+        {
+          "label": "> 80%",
+          "value": ">80%"
+        }
+      ],
+      "visibility": {
+        "field": "p_sprinkler",
+        "values": [
+          "good",
+          "avg"
+        ]
+      }
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_damkar",
+      "label": "Pemadam Kebakaran Publik — Estimasi Response Time (Bobot 10%)",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 15,
+      "options": [
+        {
+          "label": "< 15 menit — Skor 8 (Good)",
+          "value": "8"
+        },
+        {
+          "label": "15 – 30 menit — Skor 6 (Average)",
+          "value": "6"
+        },
+        {
+          "label": "30 – 45 menit — Skor 4 (Marginal)",
+          "value": "4"
+        },
+        {
+          "label": "> 45 menit — Skor 2 (Poor)",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec7",
+      "key": "p_catatan",
+      "label": "Keterangan Tambahan Terkait Proteksi Kebakaran",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 16
+    },
+    {
+      "sectionKey": "sec8",
+      "key": "ex_kondisi",
+      "label": "Kondisi fasilitas di sekitar bangunan tertanggung",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 0,
+      "options": [
+        {
+          "label": "Tidak ada fasilitas lain di sekitar dalam radius 100 m — Good (4)",
+          "value": "4",
+          "desc": "Berdiri sendiri"
+        },
+        {
+          "label": "Fasilitas lain berisiko rendah/sedang, jarak > 15 m — Average (3)",
+          "value": "3",
+          "desc": "Terdapat jarak pemisah aman"
+        },
+        {
+          "label": "Fasilitas berisiko sedang, jarak 5–15 m — Marginal (2)",
+          "value": "2",
+          "desc": "Jarak pemisah sempit"
+        },
+        {
+          "label": "Menempel / jarak < 5 m ke fasilitas berisiko tinggi — Poor (1)",
+          "value": "1",
+          "desc": "Risiko penjalaran api sangat tinggi"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec8",
+      "key": "ex_deskripsi",
+      "label": "Deskripsi fasilitas/bangunan di sekitar lokasi risiko",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 1
+    },
+    {
+      "sectionKey": "sec9",
+      "key": "nh_gempa_zone",
+      "label": "Gempa — Tarif & Zona Gempa OJK",
+      "type": "select",
+      "isRequired": true,
+      "sortOrder": 0,
+      "options": [
+        {
+          "label": "Zona 1 — Average (Risiko Gempa Sangat Rendah)",
+          "value": "1"
+        },
+        {
+          "label": "Zona 2 — Average (Risiko Gempa Rendah)",
+          "value": "2"
+        },
+        {
+          "label": "Zona 3 — Average (Risiko Gempa Sedang)",
+          "value": "3"
+        },
+        {
+          "label": "Zona 4 — Average (Risiko Gempa Agak Tinggi)",
+          "value": "4"
+        },
+        {
+          "label": "Zona 5 — Marginal (Risiko Gempa Tinggi / Sesar Aktif)",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec9",
+      "key": "nh_flood_loss",
+      "label": "Banjir: Tidak pernah tergenang / tidak ada riwayat banjir",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 1,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec9",
+      "key": "nh_flood_prone",
+      "label": "Banjir: Lokasi bukan daerah rawan banjir / zona banjir OJK",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 2,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec9",
+      "key": "nh_flood_river",
+      "label": "Banjir: Jarak dari sungai/kali > 500 m atau terdapat tanggul memadai",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 3,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec9",
+      "key": "nh_flood_elev",
+      "label": "Banjir: Elevasi lantai bangunan lebih tinggi dari jalan/lingkungan sekitar",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 4,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec9",
+      "key": "nh_flood_hill",
+      "label": "Banjir: Bukan di area lembah / potensi limpasan bukit",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 5,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec9",
+      "key": "nh_petir",
+      "label": "Penangkal Petir",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 6,
+      "options": [
+        {
+          "label": "Average (Memiliki instalasi penangkal petir & grounding terawat)",
+          "value": "avg"
+        },
+        {
+          "label": "Marginal (Tidak memiliki penangkal petir atau kondisi tidak terawat)",
+          "value": "marg"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec10",
+      "key": "le_pemisah",
+      "label": "Ada Pemisah Antar Bangunan (Fire Wall / Jarak Aman)? [TBC]",
+      "type": "radio",
+      "isRequired": false,
+      "sortOrder": 0,
+      "options": [
+        {
+          "label": "Ada",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak Ada",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec10",
+      "key": "le_jml_bangunan",
+      "label": "Jumlah Bangunan",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 1,
+      "options": [
+        {
+          "label": "1 Bangunan Utama Tunggal (Single Building)",
+          "value": "single"
+        },
+        {
+          "label": "Lebih dari 1 Bangunan (Multiple Buildings / Kompleks)",
+          "value": "multi"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec10",
+      "key": "op_ada",
+      "label": "Other Perils — Apakah ada risiko khusus lain (Longsor, Kerusuhan, Badai)?",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 2,
+      "options": [
+        {
+          "label": "Ya",
+          "value": "yes"
+        },
+        {
+          "label": "Tidak",
+          "value": "no"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec10",
+      "key": "op_deskripsi",
+      "label": "Jika ada risiko khusus lain, jelaskan detail potensi dan mitigasinya",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 3,
+      "visibility": {
+        "field": "op_ada",
+        "value": "yes"
+      }
+    },
+    {
+      "sectionKey": "sec10",
+      "key": "f_catatan_surveyor",
+      "label": "Catatan Tambahan Surveyor",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 4
+    },
+    {
+      "sectionKey": "sec11",
+      "key": "f_rekomendasi",
+      "label": "Rekomendasi Surveyor",
+      "type": "radio",
+      "isRequired": true,
+      "sortOrder": 0,
+      "options": [
+        {
+          "label": "Layak Dicover",
+          "value": "Layak dicover"
+        },
+        {
+          "label": "Layak Dicover dengan Syarat / Perbaikan",
+          "value": "Layak dicover dengan syarat/perbaikan"
+        },
+        {
+          "label": "Perlu Review Lebih Lanjut",
+          "value": "Perlu review lebih lanjut"
+        },
+        {
+          "label": "Tidak Layak Dicover",
+          "value": "Tidak layak dicover"
+        }
+      ]
+    },
+    {
+      "sectionKey": "sec11",
+      "key": "f_kesimpulan",
+      "label": "Catatan Kesimpulan Surveyor",
+      "type": "textarea",
+      "isRequired": false,
+      "sortOrder": 1
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique
+  passwordHash String
+  role         String    // SURVEYOR, RISK_ENGINEERING, UNDERWRITER, SUPER_ADMIN
+  branchId     String?
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  lastLoginAt  DateTime?
+
+  branch          Branch?               @relation(fields: [branchId], references: [id])
+  surveys         Survey[]              @relation("SurveyorSurveys")
+  reviews         SurveyReview[]
+  statusHistories SurveyStatusHistory[]
+  auditLogs       AuditLog[]
+
+  @@index([role])
+  @@index([branchId])
+}
+
+model Branch {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  code      String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users   User[]
+  surveys Survey[]
+}
+
+model FormVersion {
+  id          String    @id @default(cuid())
+  version     String    @unique // e.g. "v1.0"
+  status      String    @default("DRAFT") // DRAFT, PUBLISHED, ARCHIVED
+  publishedAt DateTime?
+  createdById String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  sections  FormSection[]
+  questions FormQuestion[]
+  surveys   Survey[]
+}
+
+model FormSection {
+  id            String   @id @default(cuid())
+  formVersionId String
+  key           String   // sec0, sec1, etc.
+  title         String
+  description   String?
+  sortOrder     Int
+  isActive      Boolean  @default(true)
+
+  formVersion FormVersion    @relation(fields: [formVersionId], references: [id], onDelete: Cascade)
+  questions   FormQuestion[]
+
+  @@index([formVersionId, sortOrder])
+}
+
+model FormQuestion {
+  id                     String   @id @default(cuid())
+  sectionId              String
+  formVersionId          String
+  key                    String   // unique question key within a version
+  label                  String
+  helpText               String?
+  type                   String   // text, textarea, number, date, select, radio, checkbox_group, file, lookup, hidden
+  isRequired             Boolean  @default(false)
+  sortOrder              Int
+  optionsJson            String?  // JSON array of options
+  validationJson         String?  // JSON validation constraints
+  visibilityConditionJson String? // JSON show_if rules
+  gradingMetadataJson    String?  // JSON grading weights / category
+  isActive               Boolean  @default(true)
+
+  section     FormSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  formVersion FormVersion @relation(fields: [formVersionId], references: [id], onDelete: Cascade)
+
+  @@unique([formVersionId, key])
+  @@index([sectionId, sortOrder])
+}
+
+model Survey {
+  id                 String    @id @default(cuid())
+  surveyNumber       String?   @unique // Generated upon submit or creation e.g. SR-202610-0001
+  insuredName        String    @default("")
+  commercialName     String?   @default("")
+  riskAddress        String?   @default("")
+  postalCode         String?   @default("")
+  gpsCoordinates     String?   @default("")
+  surveyDate         DateTime?
+  surveyorId         String
+  branchId           String?
+  occupancyCategory  String?   @default("")
+  tsiAmount          Float?    @default(0)
+  status             String    @default("DRAFT") // DRAFT, SUBMITTED, REVISION_REQUIRED, RISK_APPROVED, UNDERWRITING_REVIEW, COMPLETED, CANCELLED
+  formVersionId      String
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  submittedAt        DateTime?
+  riskApprovedAt     DateTime?
+  completedAt        DateTime?
+  deletedAt          DateTime?
+
+  surveyor         User                  @relation("SurveyorSurveys", fields: [surveyorId], references: [id])
+  branch           Branch?               @relation(fields: [branchId], references: [id])
+  formVersion      FormVersion           @relation(fields: [formVersionId], references: [id])
+  answers          SurveyAnswer[]
+  attachments      SurveyAttachment[]
+  reviews          SurveyReview[]
+  statusHistories  SurveyStatusHistory[]
+  riskCalculations RiskCalculation[]
+
+  @@index([status])
+  @@index([surveyorId])
+  @@index([branchId])
+  @@index([insuredName])
+  @@index([updatedAt])
+}
+
+model SurveyAnswer {
+  id          String   @id @default(cuid())
+  surveyId    String
+  questionKey String
+  valueJson   String   // Stores serialized answer (primitive, object, array)
+  updatedById String?
+  updatedAt   DateTime @updatedAt
+
+  survey Survey @relation(fields: [surveyId], references: [id], onDelete: Cascade)
+
+  @@unique([surveyId, questionKey])
+  @@index([surveyId])
+}
+
+model SurveyAttachment {
+  id                 String    @id @default(cuid())
+  surveyId           String
+  questionKey        String
+  attachmentCategory String?   @default("general")
+  originalFileName   String
+  storedFileName     String
+  mimeType           String
+  sizeBytes          Int
+  storagePath        String
+  uploadedById       String
+  createdAt          DateTime  @default(now())
+  deletedAt          DateTime?
+
+  survey Survey @relation(fields: [surveyId], references: [id], onDelete: Cascade)
+
+  @@index([surveyId, questionKey])
+}
+
+model SurveyReview {
+  id         String   @id @default(cuid())
+  surveyId   String
+  reviewType String   // RISK_ENGINEERING, UNDERWRITING
+  decision   String   // APPROVE, REVISION_REQUIRED, COVERABLE, COVERABLE_WITH_CONDITIONS, NEED_FURTHER_REVIEW, DECLINED
+  comment    String
+  reviewerId String
+  createdAt  DateTime @default(now())
+
+  survey   Survey @relation(fields: [surveyId], references: [id], onDelete: Cascade)
+  reviewer User   @relation(fields: [reviewerId], references: [id])
+
+  @@index([surveyId])
+}
+
+model SurveyStatusHistory {
+  id         String   @id @default(cuid())
+  surveyId   String
+  fromStatus String
+  toStatus   String
+  actorId    String
+  comment    String?  @default("")
+  createdAt  DateTime @default(now())
+
+  survey Survey @relation(fields: [surveyId], references: [id], onDelete: Cascade)
+  actor  User   @relation(fields: [actorId], references: [id])
+
+  @@index([surveyId])
+}
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  actorId      String?
+  action       String
+  entityType   String
+  entityId     String?
+  metadataJson String?  @default("{}")
+  createdAt    DateTime @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id])
+
+  @@index([actorId])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+model RiskCalculation {
+  id               String   @id @default(cuid())
+  surveyId         String
+  algorithmVersion String   @default("1.0")
+  resultJson       String   // JSON string of full score breakdown
+  overallGrade     String   // GOOD, AVERAGE, MARGINAL, POOR
+  calculatedAt     DateTime @default(now())
+  calculatedById   String?
+
+  survey Survey @relation(fields: [surveyId], references: [id], onDelete: Cascade)
+
+  @@index([surveyId])
+}
